@@ -30,15 +30,4 @@ def american_put_option_pricing(S, K, T, r, sigma, n):
                                 np.exp(-r * dt) * (p * put_values[:-1] + (1 - p) * put_values[1:]))
 
     return put_values[0]
-# Example usage
-S = 100  # Current stock price
-K = 100  # Option strike price
-T = 1    # Time to expiration (in years)
-r = 0.05 # Risk-free interest rate
-sigma = 0.2  # Volatility
-n = 100  # Number of time steps in the binomial model
 
-american_call_price = american_call_option_pricing(S, K, T, r, sigma, n)
-american_put_price = american_put_option_pricing(S, K, T, r, sigma, n)
-print(f"American Call Option Price: {american_call_price:.2f}")
-print(f"American Put Option Price: {american_put_price:.2f}")
